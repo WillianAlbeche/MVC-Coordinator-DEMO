@@ -9,14 +9,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadTableView()
     }
-
     private func loadTableView(){
         let nib = UINib(nibName: "TableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: TableViewCell.id)
@@ -34,7 +32,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
         
         return cell
     }
-    
 }
 
 
