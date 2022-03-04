@@ -13,6 +13,8 @@
 		CD67950927D282AD003B5C61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD67950727D282AD003B5C61 /* Main.storyboard */; };
 		CD67950B27D282AF003B5C61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD67950A27D282AF003B5C61 /* Assets.xcassets */; };
 		CD67950E27D282AF003B5C61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD67950C27D282AF003B5C61 /* LaunchScreen.storyboard */; };
+		CD67951727D290EF003B5C61 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD67951527D290EF003B5C61 /* TableViewCell.swift */; };
+		CD67951827D290EF003B5C61 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD67951627D290EF003B5C61 /* TableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		CD67950A27D282AF003B5C61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD67950D27D282AF003B5C61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD67950F27D282AF003B5C61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD67951527D290EF003B5C61 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		CD67951627D290EF003B5C61 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				CD67950A27D282AF003B5C61 /* Assets.xcassets */,
 				CD67950C27D282AF003B5C61 /* LaunchScreen.storyboard */,
 				CD67950F27D282AF003B5C61 /* Info.plist */,
+				CD67951527D290EF003B5C61 /* TableViewCell.swift */,
+				CD67951627D290EF003B5C61 /* TableViewCell.xib */,
 			);
 			path = "MVC-Coordinator";
 			sourceTree = "<group>";
@@ -126,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD67950E27D282AF003B5C61 /* LaunchScreen.storyboard in Resources */,
+				CD67951827D290EF003B5C61 /* TableViewCell.xib in Resources */,
 				CD67950B27D282AF003B5C61 /* Assets.xcassets in Resources */,
 				CD67950927D282AD003B5C61 /* Main.storyboard in Resources */,
 			);
@@ -139,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD67950627D282AD003B5C61 /* ViewController.swift in Sources */,
+				CD67951727D290EF003B5C61 /* TableViewCell.swift in Sources */,
 				CD67950227D282AD003B5C61 /* AppDelegate.swift in Sources */,
 				CD67950427D282AD003B5C61 /* SceneDelegate.swift in Sources */,
 			);
