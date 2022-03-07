@@ -33,11 +33,12 @@
                     <navigationItem key="navigationItem" id="NUU-Mz-vca"/>
                     <connections>
                         <outlet property="tableView" destination="BKM-Dm-mVj" id="QEF-SI-A8b"/>
+                        <segue destination="l1R-z4-AEE" kind="show" identifier="showDetails" id="da2-a6-egw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="884.05797101449286" y="119.86607142857142"/>
+            <point key="canvasLocation" x="848" y="126"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="x9t-dl-WLL">
@@ -48,7 +49,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5fM-y5-Jcv">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -61,13 +62,14 @@
                             <constraint firstItem="mWu-Tv-pIR" firstAttribute="trailing" secondItem="5fM-y5-Jcv" secondAttribute="trailing" id="ksv-Hw-OXz"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="wjs-hh-ODU"/>
                     <connections>
                         <outlet property="tableView" destination="5fM-y5-Jcv" id="cRG-jQ-b30"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="09U-8e-d5j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1928" y="120"/>
+            <point key="canvasLocation" x="1922" y="126"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gMb-Si-LeU">
@@ -85,7 +87,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wIa-Hu-GPS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-26.086956521739133" y="119.86607142857142"/>
+            <point key="canvasLocation" x="-30" y="126"/>
         </scene>
     </scenes>
     <resources>
