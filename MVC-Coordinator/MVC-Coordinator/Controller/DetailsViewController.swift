@@ -9,12 +9,13 @@ import UIKit
 
 class DetailsViewController: UIViewController {
 
-    
+    var movie: DCEU_Movie?
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadTableView()
+        print(movie!.title)
     }
     private  func loadTableView() {
         let nibTitle = UINib(nibName:"TableViewCellTitleDetails", bundle: nil)
