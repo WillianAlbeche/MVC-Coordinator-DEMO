@@ -32,6 +32,8 @@ extension DetailsViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellTitleDetails.id, for: indexPath)
+        
+        return cell
     }
 }
