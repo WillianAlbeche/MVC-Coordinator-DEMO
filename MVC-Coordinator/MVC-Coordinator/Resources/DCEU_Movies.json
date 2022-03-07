@@ -1,0 +1,186 @@
+[
+    {
+        "id": 1001,
+        "title": "Superman The Movie",
+        "year": 1978,
+        "userScore": "7.1",
+        "description": "Mild-mannered Clark Kent works as a reporter at the Daily Planet alongside his crush, Lois Lane. Clark must summon his superhero alter-ego when the nefarious Lex Luthor launches a plan to take over the world.",
+        "imageName": "1978 Superman The Movie"
+    },
+    {
+        "id": 1002,
+        "title": "Superman II",
+        "year": 1980,
+        "userScore": "6.7",
+        "description": "Three escaped criminals from the planet Krypton test the Man of Steel's mettle. Led by General Zod, the Kryptonians take control of the White House and partner with Lex Luthor to destroy Superman and rule the world. But Superman, who attempts to make himself human in order to get closer to Lois, realizes he has a responsibility to save the planet.",
+        "imageName": "1980 Superman II"
+    },
+    {
+        "id": 1003,
+        "title": "Superman III",
+        "year": 1983,
+        "userScore": "5.5",
+        "description": "Aiming to defeat the Man of Steel, wealthy executive Ross Webster hires bumbling but brilliant Gus Gorman to develop synthetic kryptonite, which yields some unexpected psychological effects in the third installment of the 1980s Superman franchise. Between rekindling romance with his high school sweetheart and saving himself, Superman must contend with a powerful supercomputer.",
+        "imageName": "1983 Superman III"
+    },
+    {
+        "id": 1004,
+        "title": "Superman IV The Quest for Peace",
+        "year": 1987,
+        "userScore": "4.5",
+        "description": "With global superpowers engaged in an increasingly hostile arms race, Superman leads a crusade to rid the world of nuclear weapons. But Lex Luthor, recently sprung from jail, is declaring war on the Man of Steel and his quest to save the planet. Using a strand of Superman's hair, Luthor synthesizes a powerful ally known as Nuclear Man and ignites an epic battle spanning Earth and space.",
+        "imageName": "1987 Superman IV The Quest for Peace"
+    },
+    {
+        "id": 1005,
+        "title": "Batman",
+        "year": 1989,
+        "userScore": "7.2",
+        "description": "Batman must face his most ruthless nemesis when a deformed madman calling himself The Joker seizes control of Gotham's criminal underworld.",
+        "imageName": "1989 Batman"
+    },
+    {
+        "id": 1006,
+        "title": "Batman Returns",
+        "year": 1992,
+        "userScore": "6.8",
+        "description": "While Batman deals with a deformed man calling himself the Penguin, an employee of a corrupt businessman transforms into the Catwoman.",
+        "imageName": "1992 Batman Returns"
+    },
+    {
+        "id": 1007,
+        "title": "Batman Forever",
+        "year": 1995,
+        "userScore": "5.4",
+        "description": "Batman must battle a disfigured district attorney and a disgruntled former employee with help from an amorous psychologist and a young circus acrobat.",
+        "imageName": "1995 Batman Forever"
+    },
+    {
+        "id": 1008,
+        "title": "Batman & Robin",
+        "year": 1997,
+        "userScore": "4.3",
+        "description": "Batman and Robin deal with relationship issues while preventing Mr. Freeze and Poison Ivy from attacking Gotham City.",
+        "imageName": "1997 Batman & Robin"
+    },
+    {
+        "id": 1009,
+        "title": "Batman Begins",
+        "year": 2005,
+        "userScore": "7.7",
+        "description": "Driven by tragedy, billionaire Bruce Wayne dedicates his life to uncovering and defeating the corruption that plagues his home, Gotham City. Unable to work within the system, he instead creates a new identity, a symbol of fear for the criminal underworld - The Batman.",
+        "imageName": "2005 Batman Begins"
+    },
+    {
+        "id": 1010,
+        "title": "Superman Returns",
+        "year": 2006,
+        "userScore": "5.6",
+        "description": "Superman returns to discover his 5-year absence has allowed Lex Luthor to walk free, and that those he was closest to felt abandoned and have moved on. Luthor plots his ultimate revenge that could see millions killed and change the face of the planet forever, as well as ridding himself of the Man of Steel.",
+        "imageName": "2006 Superman Returns"
+    },
+    {
+        "id": 1011,
+        "title": "The Dark Knight",
+        "year": 2008,
+        "userScore": "8.5",
+        "description": "Batman raises the stakes in his war on crime. With the help of Lt. Jim Gordon and District Attorney Harvey Dent, Batman sets out to dismantle the remaining criminal organizations that plague the streets. The partnership proves to be effective, but they soon find themselves prey to a reign of chaos unleashed by a rising criminal mastermind known to the terrified citizens of Gotham as the Joker.",
+        "imageName": "2008 The Dark Knight"
+    },
+    {
+        "id": 1012,
+        "title": "The Dark Knight Rises",
+        "year": 2012,
+        "userScore": "7.7",
+        "description": "Following the death of District Attorney Harvey Dent, Batman assumes responsibility for Dent's crimes to protect the late attorney's reputation and is subsequently hunted by the Gotham City Police Department. Eight years later, Batman encounters the mysterious Selina Kyle and the villainous Bane, a new terrorist leader who overwhelms Gotham's finest. The Dark Knight resurfaces to protect a city that has branded him an enemy.",
+        "imageName": "2012 The Dark Knight Rises"
+    },
+    {
+        "id": 1013,
+        "title": "Man of Steel",
+        "year": 2013,
+        "userScore": "6.6",
+        "description": "A young boy learns that he has extraordinary powers and is not of this earth. As a young man, he journeys to discover where he came from and what he was sent here to do. But the hero in him must emerge if he is to save the world from annihilation and become the symbol of hope for all mankind.",
+        "imageName": "2013 Man of Steel"
+    },
+    {
+        "id": 1014,
+        "title": "Batman v Superman Dawn of Justice",
+        "year": 2016,
+        "userScore": "5.9",
+        "description": "Fearing the actions of a god-like Super Hero left unchecked, Gotham City’s own formidable, forceful vigilante takes on Metropolis’s most revered, modern-day savior, while the world wrestles with what sort of hero it really needs. And with Batman and Superman at war with one another, a new threat quickly arises, putting mankind in greater danger than it’s ever known before.",
+        "imageName": "2016 Batman v Superman Dawn of Justice"
+    },
+    {
+        "id": 1015,
+        "title": "Suicide Squad",
+        "year": 2016,
+        "userScore": "5.9",
+        "description": "From DC Comics comes the Suicide Squad, an antihero team of incarcerated supervillains who act as deniable assets for the United States government, undertaking high-risk black ops missions in exchange for commuted prison sentences.",
+        "imageName": "2016 Suicide Squad"
+    },
+    {
+        "id": 1016,
+        "title": "Justice League",
+        "year": 2017,
+        "userScore": "6.2",
+        "description": "Fuelled by his restored faith in humanity and inspired by Superman's selfless act, Bruce Wayne and Diana Prince assemble a team of metahumans consisting of Barry Allen, Arthur Curry and Victor Stone to face the catastrophic threat of Steppenwolf and the Parademons who are on the hunt for three Mother Boxes on Earth.",
+        "imageName": "2017 Justice League"
+    },
+    {
+        "id": 1017,
+        "title": "Wonder Woman",
+        "year": 2017,
+        "userScore": "7.3",
+        "description": "An Amazon princess comes to the world of Man in the grips of the First World War to confront the forces of evil and bring an end to human conflict.",
+        "imageName": "2017 Wonder Woman"
+    },
+    {
+        "id": 1018,
+        "title": "Aquaman",
+        "year": 2018,
+        "userScore": "6.9",
+        "description": "Once home to the most advanced civilization on Earth, Atlantis is now an underwater kingdom ruled by the power-hungry King Orm. With a vast army at his disposal, Orm plans to conquer the remaining oceanic people and then the surface world. Standing in his way is Arthur Curry, Orm's half-human, half-Atlantean brother and true heir to the throne.",
+        "imageName": "2018 Aquaman"
+    },
+    {
+        "id": 1019,
+        "title": "Shazam!",
+        "year": 2019,
+        "userScore": "7.1",
+        "description": "A boy is given the ability to become an adult superhero in times of need with a single magic word.",
+        "imageName": "2019 Shazam!"
+    },
+    {
+        "id": 1020,
+        "title": "Joker",
+        "year": 2019,
+        "userScore": "8.2",
+        "description": "During the 1980s, a failed stand-up comedian is driven insane and turns to a life of crime and chaos in Gotham City while becoming an infamous psychopathic crime figure.",
+        "imageName": "2019 Joker"
+    },
+    {
+        "id": 1021,
+        "title": "Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn)",
+        "year": 2020,
+        "userScore": "7.1",
+        "description": "Harley Quinn joins forces with a singer, an assassin and a police detective to help a young girl who had a hit placed on her after she stole a rare diamond from a crime lord.",
+        "imageName": "2020 Birds of Prey"
+    },
+    {
+        "id": 1022,
+        "title": "Wonder Woman 1984",
+        "year": 2020,
+        "userScore": "6.8",
+        "description": "A botched store robbery places Wonder Woman in a global battle against a powerful and mysterious ancient force that puts her powers in jeopardy.",
+        "imageName": "2020 Wonder Woman 1984"
+    },
+    {
+        "id": 1023,
+        "title": "Zack Snyder's Justice League",
+        "year": 2021,
+        "userScore": "8.7",
+        "description": "Determined to ensure Superman's ultimate sacrifice was not in vain, Bruce Wayne aligns forces with Diana Prince with plans to recruit a team of metahumans to protect the world from an approaching threat of catastrophic proportions.",
+        "imageName": "2021 Zack Snyder's Justice League"
+    }
+]

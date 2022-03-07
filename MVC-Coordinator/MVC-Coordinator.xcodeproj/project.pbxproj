@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92C4D26727D6927100DE9D5A /* DCEU_Movies.json in Resources */ = {isa = PBXBuildFile; fileRef = 92C4D26527D6927100DE9D5A /* DCEU_Movies.json */; };
+		92C4D26A27D6928300DE9D5A /* DCEU_Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C4D26927D6928300DE9D5A /* DCEU_Movie.swift */; };
+		92C4D26C27D692B500DE9D5A /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C4D26B27D692B500DE9D5A /* ModelData.swift */; };
 		CD67950227D282AD003B5C61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD67950127D282AD003B5C61 /* AppDelegate.swift */; };
 		CD67950427D282AD003B5C61 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD67950327D282AD003B5C61 /* SceneDelegate.swift */; };
 		CD67950627D282AD003B5C61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD67950527D282AD003B5C61 /* ViewController.swift */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		92C4D26527D6927100DE9D5A /* DCEU_Movies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DCEU_Movies.json; sourceTree = "<group>"; };
+		92C4D26927D6928300DE9D5A /* DCEU_Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCEU_Movie.swift; sourceTree = "<group>"; };
+		92C4D26B27D692B500DE9D5A /* ModelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		CD6794FE27D282AD003B5C61 /* MVC-Coordinator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVC-Coordinator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD67950127D282AD003B5C61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD67950327D282AD003B5C61 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +57,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		92C4D26427D6924700DE9D5A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				92C4D26927D6928300DE9D5A /* DCEU_Movie.swift */,
+				92C4D26B27D692B500DE9D5A /* ModelData.swift */,
+				92C4D26527D6927100DE9D5A /* DCEU_Movies.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		CD19DB8227D6833100487157 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +124,7 @@
 		CD67950027D282AD003B5C61 /* MVC-Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				92C4D26427D6924700DE9D5A /* Resources */,
 				CD67950127D282AD003B5C61 /* AppDelegate.swift */,
 				CD67950327D282AD003B5C61 /* SceneDelegate.swift */,
 				CD19DB8327D6838700487157 /* Views */,
@@ -183,6 +200,7 @@
 				CD67951827D290EF003B5C61 /* TableViewCell.xib in Resources */,
 				CD67950B27D282AF003B5C61 /* Assets.xcassets in Resources */,
 				CD67950927D282AD003B5C61 /* Main.storyboard in Resources */,
+				92C4D26727D6927100DE9D5A /* DCEU_Movies.json in Resources */,
 				CD67952427D2A150003B5C61 /* TableViewCellDescriptionDetails.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,6 +218,8 @@
 				CD67952327D2A150003B5C61 /* TableViewCellDescriptionDetails.swift in Sources */,
 				CD67952627D2AAFB003B5C61 /* DetailsViewController.swift in Sources */,
 				CD67951F27D2A122003B5C61 /* TableViewCellTitleDetails.swift in Sources */,
+				92C4D26C27D692B500DE9D5A /* ModelData.swift in Sources */,
+				92C4D26A27D6928300DE9D5A /* DCEU_Movie.swift in Sources */,
 				CD67950427D282AD003B5C61 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,7 +369,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 76N3ST5C2U;
+				DEVELOPMENT_TEAM = W5VQ56Z87Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "MVC-Coordinator/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -362,7 +382,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "me.DeveloperAcademy.MVC-Coordinator";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nimdog.mvc-coordinator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -377,7 +397,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 76N3ST5C2U;
+				DEVELOPMENT_TEAM = W5VQ56Z87Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "MVC-Coordinator/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -390,7 +410,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "me.DeveloperAcademy.MVC-Coordinator";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nimdog.mvc-coordinator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
