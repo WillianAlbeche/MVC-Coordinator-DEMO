@@ -27,13 +27,19 @@ class DetailsViewController: UIViewController {
 }
 
 extension DetailsViewController: UITableViewDataSource, UITableViewDelegate{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 2 //0 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellTitleDetails.id, for: indexPath)
-        
+        var cellId:String = ""
+        if indexPath.row == 0{
+            cellId = TableViewCellTitleDetails.id
+        }else {
+            cellId = TableViewCellDescriptionDetails.id
+        }
+        let cell = tableView.dequeueReusableCell(withIdentifier:cellId, for: indexPath)
         return cell
     }
 }
