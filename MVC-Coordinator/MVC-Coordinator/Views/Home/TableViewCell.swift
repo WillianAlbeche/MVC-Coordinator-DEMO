@@ -13,11 +13,13 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var imageCell: UIImageView!
     @IBOutlet weak var titleCell: UILabel!
     @IBOutlet weak var descriptionCell: UILabel!
-    
+    @IBOutlet weak var ratingCell: UILabel!
     static let id:String = "MovieCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    
 }

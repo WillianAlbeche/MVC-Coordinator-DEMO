@@ -9,6 +9,7 @@ import UIKit
 
 class DetailsViewController: UIViewController {
 
+    var movie: DCEU_Movie?
     @IBOutlet weak var tableView: UITableView!
     
     private var service = QueryService()
@@ -21,6 +22,7 @@ class DetailsViewController: UIViewController {
             getMovie(id: movieId)
             loadTableView()
         }
+        loadTableView()
     }
     
     private func getMovie(id: Int) {
@@ -52,12 +54,29 @@ extension DetailsViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cellId:String = ""
+        
         if indexPath.row == 0{
             cellId = TableViewCellTitleDetails.id
-        }else {
-            cellId = TableViewCellDescriptionDetails.id
+            guard let cell = tableView.dequeueReusableCell(withIdentifier:cellId, for: indexPath) as? TableViewCellTitleDetails else{
+                print(Error.self)
+                return UITableViewCell()
+            }
+            if let movie = self.movie   {
+                cell.imageCell.image =  UIImage(named: movie.imageName)
+                cell.ratingCell.text = movie.userScore
+                cell.titleCell.text = movie.title
+            }
+            return cell
         }
-        let cell = tableView.dequeueReusableCell(withIdentifier:cellId, for: indexPath)
+        
+        cellId = TableViewCellDescriptionDetails.id
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as?
+                TableViewCellDescriptionDetails else{
+                    print(Error.self)
+                    return UITableViewCell()
+                }
+        cell.resumeCell.text = movie?.description
+        
         return cell
     }
 }

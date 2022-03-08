@@ -35,10 +35,10 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="filme bomm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oE2-D9-ulZ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="filme bomm" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oE2-D9-ulZ">
                                         <rect key="frame" x="0.0" y="31.5" width="284" height="19.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.56470588239999997" green="0.56470588239999997" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zhj-i5-mh3">
@@ -79,6 +79,7 @@
             <connections>
                 <outlet property="descriptionCell" destination="oE2-D9-ulZ" id="F0c-Kc-4L0"/>
                 <outlet property="imageCell" destination="Lrw-0p-aBN" id="svf-AD-12c"/>
+                <outlet property="ratingCell" destination="5aS-6S-GFx" id="iYn-aO-lsy"/>
                 <outlet property="titleCell" destination="ohN-j5-2wI" id="mWZ-q0-HWE"/>
             </connections>
             <point key="canvasLocation" x="205.79710144927537" y="174.10714285714286"/>

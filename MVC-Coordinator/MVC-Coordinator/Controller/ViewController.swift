@@ -16,17 +16,21 @@ class ViewController: UIViewController {
     private var service = QueryService()
     let dispatchGroup = DispatchGroup()
     
+    // let movieList = movies
+    // var movie: DCEU_Movie?
     override func viewDidLoad() {
         super.viewDidLoad()
         loadTableView()
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "showDetails"{
             guard let viewController = segue.destination as? DetailsViewController else{
                 print(Error.self)
                 return
             }
+            viewController.movie = self.movie
         }
     }
     
@@ -56,16 +60,25 @@ class ViewController: UIViewController {
 }
 extension ViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movies.count
+        return movieList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.id, for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.id, for: indexPath) as? TableViewCell else{
+            print(Error.self)
+            return UITableViewCell()
+        }
+        cell.imageCell.image = UIImage(named: movieList[indexPath.row].imageName)
+        cell.titleCell.text = movieList[indexPath.row].title
+        cell.descriptionCell.text = movieList[indexPath.row].description
+        cell.ratingCell.text = movieList[indexPath.row].userScore
+        
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.movie = movieList[indexPath.row]
         tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier:"showDetails", sender: nil)
     }
