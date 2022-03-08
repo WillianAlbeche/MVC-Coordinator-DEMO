@@ -12,11 +12,30 @@ class DetailsViewController: UIViewController {
     var movie: DCEU_Movie?
     @IBOutlet weak var tableView: UITableView!
     
+    private var service = QueryService()
+    var id: Int?
+    var movieReceived: Movie?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let movieId = self.id {
+            getMovie(id: movieId)
+            loadTableView()
+        }
         loadTableView()
-        
     }
+    
+    private func getMovie(id: Int) {
+        service.getMovie(movieId: id) { result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let movie):
+                self.movieReceived = movie
+            }
+        }
+    }
+    
     private  func loadTableView() {
         let nibTitle = UINib(nibName:"TableViewCellTitleDetails", bundle: nil)
         let nibDescription = UINib(nibName: "TableViewCellDescriptionDetails", bundle: nil)
