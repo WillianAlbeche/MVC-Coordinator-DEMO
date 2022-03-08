@@ -61,6 +61,8 @@ extension DetailsViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cellId:String = ""
         
+        
+        
         if indexPath.row == 0 {
             cellId = TableViewCellTitleDetails.id
             guard let cell = tableView.dequeueReusableCell(withIdentifier:cellId, for: indexPath) as? TableViewCellTitleDetails else{
@@ -69,9 +71,19 @@ extension DetailsViewController: UITableViewDataSource, UITableViewDelegate{
             }
             if let movie = self.movie,
                let posterPath = self.moviePosterPath {
+                
+                var movieGenreArray: [String] = []
+                for position in 0..<movie.genres.count {
+                    movieGenreArray.append(movie.genres[position].name)
+                }
+                var movieGenreString: String = ""
+                movieGenreString.append(movieGenreArray.map {"\($0)"}.joined(separator: ", "))
+                cell.categoryCell.text = movieGenreString
                 cell.imageCell.loadImage(withUrl: ImageHelpers.getImageURL(path: posterPath))
                 cell.ratingCell.text = String(movie.voteAverage)
                 cell.titleCell.text = movie.title
+                
+                
             }
             return cell
         }
