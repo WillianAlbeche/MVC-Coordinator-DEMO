@@ -26,7 +26,7 @@ class QueryService {
         }
     }
 
-    func getComicsMovies(completion: @escaping (Result<FilmStockList, NetworkError>) -> Void) {
+    func getComicsMovies(completion: @escaping (Result<MovieList, NetworkError>) -> Void) {
         let comicsMoviesURL = "/discover/movie?with_keywords=9717&sort_by=popularity.desc&"
         defaultSession.dataTask(with: requestConfiguration(for: comicsMoviesURL)) { data, response, error in
             if error != nil {
@@ -36,7 +36,7 @@ class QueryService {
                       response.statusCode == 200 {
                 do {
                     let decoder = JSONDecoder()
-                    let comicsMovies = try decoder.decode(FilmStockList.self, from: data)
+                    let comicsMovies = try decoder.decode(MovieList.self, from: data)
                     completion(.success(comicsMovies))
                 } catch {
                     completion(.failure(.decodingError))
