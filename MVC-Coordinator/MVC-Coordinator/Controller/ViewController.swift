@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     
     private func getData() {
         dispatchGroup.enter()
-        service.getComicsMovies { result in
+        service.getMovieList { result in
             switch result {
             case .failure(let error):
                 print(error)
