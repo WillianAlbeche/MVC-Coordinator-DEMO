@@ -11,6 +11,11 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var movieList: MovieList?
+    var movie: MovieList?
+    private var service = QueryService()
+    let dispatchGroup = DispatchGroup()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadTableView()
@@ -22,6 +27,23 @@ class ViewController: UIViewController {
                 print(Error.self)
                 return
             }
+        }
+    }
+    
+    private func getData() {
+        dispatchGroup.enter()
+        service.getComicsMovies { result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let movieList):
+                self.dispatchGroup.leave()
+                self.movieList = movieList
+            }
+        }
+
+        dispatchGroup.notify(queue: .main) {
+            self.tableView.reloadData()
         }
     }
     

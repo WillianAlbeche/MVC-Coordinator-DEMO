@@ -27,7 +27,7 @@ class QueryService {
     }
 
     func getComicsMovies(completion: @escaping (Result<MovieList, NetworkError>) -> Void) {
-        let comicsMoviesURL = "/discover/movie?with_keywords=9717&sort_by=popularity.desc&"
+        let comicsMoviesURL = "/discover/movie?sort_by=popularity.desc&"
         defaultSession.dataTask(with: requestConfiguration(for: comicsMoviesURL)) { data, response, error in
             if error != nil {
                 completion(.failure(.unexpectedError))
