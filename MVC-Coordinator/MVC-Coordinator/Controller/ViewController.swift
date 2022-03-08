@@ -8,6 +8,10 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
+    
+    
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,6 +26,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         getData()
         loadTableView()
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        let search = UISearchController(searchResultsController: nil)
+        
+        self.navigationItem.searchController = search
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
