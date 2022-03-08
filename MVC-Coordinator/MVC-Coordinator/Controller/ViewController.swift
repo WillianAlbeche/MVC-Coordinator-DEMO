@@ -11,8 +11,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var movieList: MovieList?
-    var movie: MovieList?
+    var movieList = MovieList()
+    var movie: ListedMovie?
     private var service = QueryService()
     let dispatchGroup = DispatchGroup()
     
@@ -20,9 +20,10 @@ class ViewController: UIViewController {
     // var movie: DCEU_Movie?
     override func viewDidLoad() {
         super.viewDidLoad()
+        getData()
         loadTableView()
-        
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "showDetails"{
@@ -30,7 +31,8 @@ class ViewController: UIViewController {
                 print(Error.self)
                 return
             }
-            viewController.movie = self.movie
+            viewController.movieIdReceived = self.movie?.id
+            viewController.moviePosterPath = self.movie?.posterPath
         }
     }
     
@@ -60,7 +62,7 @@ class ViewController: UIViewController {
 }
 extension ViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movieList.count
+        return movieList.results.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -68,17 +70,16 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
             print(Error.self)
             return UITableViewCell()
         }
-        cell.imageCell.image = UIImage(named: movieList[indexPath.row].imageName)
-        cell.titleCell.text = movieList[indexPath.row].title
-        cell.descriptionCell.text = movieList[indexPath.row].description
-        cell.ratingCell.text = movieList[indexPath.row].userScore
-        
+        cell.imageCell.loadImage(withUrl: ImageHelpers.getImageURL(path: movieList.results[indexPath.row].posterPath))
+        cell.titleCell.text = movieList.results[indexPath.row].title
+        cell.descriptionCell.text = movieList.results[indexPath.row].overview
+        cell.ratingCell.text = String(movieList.results[indexPath.row].voteAverage)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.movie = movieList[indexPath.row]
+        self.movie = movieList.results[indexPath.row]
         tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier:"showDetails", sender: nil)
     }
