@@ -22,4 +22,12 @@ class MainCoordinator: NSObject, Coordinator, UINavigationControllerDelegate {
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
     }
+    
+    func showMovieDetails(movie id: Int, path: String) {
+        let vc = DetailsViewController.instantiated()
+        vc.movieIdReceived = id
+        vc.moviePosterPath = path
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
+    }
 }

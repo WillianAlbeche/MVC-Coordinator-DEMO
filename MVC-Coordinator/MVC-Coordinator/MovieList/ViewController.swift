@@ -8,18 +8,14 @@
 import UIKit
 
 class ViewController: UIViewController, Storyboarded {
-
     @IBOutlet weak var tableView: UITableView!
     
     weak var coordinator: MainCoordinator?
     
     var movieList = MovieList()
-    var movie: ListedMovie?
     private var service = QueryService()
     let dispatchGroup = DispatchGroup()
     
-    // let movieList = movies
-    // var movie: DCEU_Movie?
     override func viewDidLoad() {
         super.viewDidLoad()
         getData()
@@ -29,18 +25,6 @@ class ViewController: UIViewController, Storyboarded {
         let search = UISearchController(searchResultsController: nil)
         
         self.navigationItem.searchController = search
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "showDetails"{
-            guard let viewController = segue.destination as? DetailsViewController else{
-                print(Error.self)
-                return
-            }
-            viewController.movieIdReceived = self.movie?.id
-            viewController.moviePosterPath = self.movie?.posterPath
-        }
     }
     
     private func getData() {
@@ -86,9 +70,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.movie = movieList.results[indexPath.row]
-        tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier:"showDetails", sender: nil)
+        let movie = movieList.results[indexPath.row]
+        coordinator?.showMovieDetails(movie: movie.id, path: movie.posterPath)
     }
 }
 
