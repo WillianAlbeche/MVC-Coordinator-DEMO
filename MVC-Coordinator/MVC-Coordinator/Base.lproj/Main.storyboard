@@ -62,7 +62,7 @@
                             <constraint firstItem="mWu-Tv-pIR" firstAttribute="trailing" secondItem="5fM-y5-Jcv" secondAttribute="trailing" id="ksv-Hw-OXz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="wjs-hh-ODU"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="wjs-hh-ODU"/>
                     <connections>
                         <outlet property="tableView" destination="5fM-y5-Jcv" id="cRG-jQ-b30"/>
                     </connections>

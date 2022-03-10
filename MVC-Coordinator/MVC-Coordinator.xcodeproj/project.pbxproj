@@ -103,34 +103,41 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		CD19DB8227D6833100487157 /* Controller */ = {
+		92DDFBAF27DA6A680043057C /* MovieList */ = {
 			isa = PBXGroup;
 			children = (
+				CD19DB8427D685E500487157 /* Views */,
 				CD67950527D282AD003B5C61 /* ViewController.swift */,
+			);
+			path = MovieList;
+			sourceTree = "<group>";
+		};
+		92DDFBB027DA6B260043057C /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		CD19DB8227D6833100487157 /* MovieDetails */ = {
+			isa = PBXGroup;
+			children = (
+				CD19DB8527D685F100487157 /* Views */,
 				CD67952527D2AAFB003B5C61 /* DetailsViewController.swift */,
 			);
-			path = Controller;
+			path = MovieDetails;
 			sourceTree = "<group>";
 		};
-		CD19DB8327D6838700487157 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				CD19DB8427D685E500487157 /* Home */,
-				CD19DB8527D685F100487157 /* Details */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		CD19DB8427D685E500487157 /* Home */ = {
+		CD19DB8427D685E500487157 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				CD67951527D290EF003B5C61 /* TableViewCell.swift */,
 				CD67951627D290EF003B5C61 /* TableViewCell.xib */,
 			);
-			path = Home;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		CD19DB8527D685F100487157 /* Details */ = {
+		CD19DB8527D685F100487157 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				CD67951D27D2A122003B5C61 /* TableViewCellTitleDetails.swift */,
@@ -138,7 +145,7 @@
 				CD67952127D2A150003B5C61 /* TableViewCellDescriptionDetails.swift */,
 				CD67952227D2A150003B5C61 /* TableViewCellDescriptionDetails.xib */,
 			);
-			path = Details;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		CD6794F527D282AD003B5C61 = {
@@ -161,16 +168,17 @@
 		CD67950027D282AD003B5C61 /* MVC-Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				92DDFBB027DA6B260043057C /* Coordinators */,
 				92C4D27027D7736000DE9D5A /* Models */,
 				92C4D26D27D772DF00DE9D5A /* Networking */,
 				92C4D26427D6924700DE9D5A /* Resources */,
+				92DDFBAF27DA6A680043057C /* MovieList */,
+				CD19DB8227D6833100487157 /* MovieDetails */,
 				CD67950127D282AD003B5C61 /* AppDelegate.swift */,
 				CD67950327D282AD003B5C61 /* SceneDelegate.swift */,
-				CD19DB8327D6838700487157 /* Views */,
-				CD19DB8227D6833100487157 /* Controller */,
+				CD67950C27D282AF003B5C61 /* LaunchScreen.storyboard */,
 				CD67950727D282AD003B5C61 /* Main.storyboard */,
 				CD67950A27D282AF003B5C61 /* Assets.xcassets */,
-				CD67950C27D282AF003B5C61 /* LaunchScreen.storyboard */,
 				CD67950F27D282AF003B5C61 /* Info.plist */,
 			);
 			path = "MVC-Coordinator";
