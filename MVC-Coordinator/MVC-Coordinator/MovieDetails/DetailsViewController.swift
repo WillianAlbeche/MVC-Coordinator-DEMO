@@ -7,9 +7,10 @@
 
 import UIKit
 
-class DetailsViewController: UIViewController {
-    
+class DetailsViewController: UIViewController, Storyboarded {
     @IBOutlet weak var tableView: UITableView!
+    
+    weak var coordinator: MainCoordinator?
     
     var movie: Movie?
     var movieIdReceived: Int?
@@ -61,8 +62,6 @@ extension DetailsViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cellId:String = ""
         
-        
-        
         if indexPath.row == 0 {
             cellId = TableViewCellTitleDetails.id
             guard let cell = tableView.dequeueReusableCell(withIdentifier:cellId, for: indexPath) as? TableViewCellTitleDetails else{
@@ -82,8 +81,6 @@ extension DetailsViewController: UITableViewDataSource, UITableViewDelegate{
                 cell.imageCell.loadImage(withUrl: ImageHelpers.getImageURL(path: posterPath))
                 cell.ratingCell.text = String(movie.voteAverage)
                 cell.titleCell.text = movie.title
-                
-                
             }
             return cell
         }
