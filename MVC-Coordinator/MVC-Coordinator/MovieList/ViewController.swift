@@ -7,13 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    
-    
-    
-    
+class ViewController: UIViewController, Storyboarded {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    weak var coordinator: MainCoordinator?
     
     var movieList = MovieList()
     var movie: ListedMovie?
