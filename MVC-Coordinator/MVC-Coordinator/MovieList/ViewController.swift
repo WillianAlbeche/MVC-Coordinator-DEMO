@@ -11,11 +11,11 @@ class ViewController: UIViewController, Storyboarded {
     @IBOutlet weak var tableView: UITableView!
     
     weak var coordinator: MainCoordinator?
-    
-    var movieList = MovieList()
+    var sections = Dictionary<String, [ListedMovie]>()
+    var movie: ListedMovie?
     private var service = QueryService()
     let dispatchGroup = DispatchGroup()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         getData()
@@ -29,18 +29,44 @@ class ViewController: UIViewController, Storyboarded {
     
     private func getData() {
         dispatchGroup.enter()
-        service.getMovieList { result in
+        
+        service.getPopularMovieList { result in
             switch result {
             case .failure(let error):
                 print(error)
             case .success(let movieList):
-                self.dispatchGroup.leave()
-                self.movieList = movieList
+                self.setSection(section: "Popular", movieList: movieList)
             }
         }
-
+        
+        service.getNowPlayingMovieList { result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let movieList):
+                self.setSection(section: "Playing", movieList: movieList)
+            }
+        }
+        
+        dispatchGroup.leave()
+        
         dispatchGroup.notify(queue: .main) {
             self.tableView.reloadData()
+        }
+    }
+    
+    private func setSection(section: String, movieList: MovieList) {
+        self.sections[section] = movieList.results
+    }
+    
+    private func getSectionKey(index: Int) -> String {
+        switch index {
+        case 0:
+            return "Popular"
+        case 1:
+            return "Playing"
+        default:
+            return ""
         }
     }
     
@@ -52,8 +78,24 @@ class ViewController: UIViewController, Storyboarded {
     }
 }
 extension ViewController: UITableViewDataSource, UITableViewDelegate{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sections.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return getSectionKey(index: section)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movieList.results.count
+        guard let sectionList = self.sections[getSectionKey(index: section)] else {
+            return 0
+        }
+        
+        if section == 0 {
+            return 2
+        }
+        
+        return sectionList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -61,22 +103,25 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
             print(Error.self)
             return UITableViewCell()
         }
-        cell.imageCell.loadImage(withUrl: ImageHelpers.getImageURL(path: movieList.results[indexPath.row].posterPath))
-        cell.titleCell.text = movieList.results[indexPath.row].title
-        cell.descriptionCell.text = movieList.results[indexPath.row].overview
-        cell.ratingCell.text = String(movieList.results[indexPath.row].voteAverage)
+        
+        let sectionKey = getSectionKey(index: indexPath.section)
+        
+        if let movie = sections[sectionKey]?[indexPath.row] {
+            cell.imageCell.loadImage(withUrl: ImageHelpers.getImageURL(path: movie.posterPath))
+            cell.titleCell.text = movie.title
+            cell.descriptionCell.text = movie.overview
+            cell.ratingCell.text = String(movie.voteAverage)
+            
+            self.movie = movie
+        }
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let movie = movieList.results[indexPath.row]
-        coordinator?.showMovieDetails(movie: movie.id, path: movie.posterPath)
+        let sectionKey = getSectionKey(index: indexPath.section)
+        if let movie = sections[sectionKey]?[indexPath.row] {
+            coordinator?.showMovieDetails(movie: movie.id, path: movie.posterPath)
+        }
     }
 }
-
-
-
-
-
-

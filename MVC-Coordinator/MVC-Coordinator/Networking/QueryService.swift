@@ -26,9 +26,9 @@ class QueryService {
         }
     }
 
-    func getMovieList(completion: @escaping (Result<MovieList, NetworkError>) -> Void) {
-        let comicsMoviesURL = "/discover/movie?sort_by=popularity.desc&"
-        defaultSession.dataTask(with: requestConfiguration(for: comicsMoviesURL)) { data, response, error in
+    func getPopularMovieList(completion: @escaping (Result<MovieList, NetworkError>) -> Void) {
+        let movieListURL = "/discover/movie?sort_by=popularity.desc&"
+        defaultSession.dataTask(with: requestConfiguration(for: movieListURL)) { data, response, error in
             if error != nil {
                 completion(.failure(.unexpectedError))
             } else if let data = data,
@@ -36,8 +36,27 @@ class QueryService {
                       response.statusCode == 200 {
                 do {
                     let decoder = JSONDecoder()
-                    let comicsMovies = try decoder.decode(MovieList.self, from: data)
-                    completion(.success(comicsMovies))
+                    let movieList = try decoder.decode(MovieList.self, from: data)
+                    completion(.success(movieList))
+                } catch {
+                    completion(.failure(.decodingError))
+                }
+            }
+        }.resume()
+    }
+    
+    func getNowPlayingMovieList(completion: @escaping (Result<MovieList, NetworkError>) -> Void) {
+        let movieListURL = "/movie/now_playing?"
+        defaultSession.dataTask(with: requestConfiguration(for: movieListURL)) { data, response, error in
+            if error != nil {
+                completion(.failure(.unexpectedError))
+            } else if let data = data,
+                      let response = response as? HTTPURLResponse,
+                      response.statusCode == 200 {
+                do {
+                    let decoder = JSONDecoder()
+                    let movieList = try decoder.decode(MovieList.self, from: data)
+                    completion(.success(movieList))
                 } catch {
                     completion(.failure(.decodingError))
                 }
