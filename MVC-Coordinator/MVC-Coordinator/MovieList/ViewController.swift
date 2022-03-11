@@ -119,6 +119,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let sectionKey = getSectionKey(index: indexPath.section)
         if let movie = sections[sectionKey]?[indexPath.row] {
             coordinator?.showMovieDetails(movie: movie.id, path: movie.posterPath)
