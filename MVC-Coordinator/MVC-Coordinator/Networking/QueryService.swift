@@ -13,7 +13,7 @@ enum NetworkError: Error {
 }
 
 class QueryService {
-    private let apiKey = "api_key=88c7ef8c629429f93f34e6558bb26c14" // aqui vai a key do TMDB
+    private let apiKey = "api_key=" // aqui vai a key do TMDB
     private let defaultSession = URLSession(configuration: .default)
 
     private func requestConfiguration(for route: String) -> URLRequest {
